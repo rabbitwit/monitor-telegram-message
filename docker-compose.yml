@@ -1,0 +1,17 @@
+services:
+  monitor-telegram-message:
+    build: .
+    container_name: monitor-telegram-message
+    volumes:
+      # 挂载环境变量文件
+      - ./.env:/app/.env
+      # 如果需要持久化其他数据，可以添加更多卷
+    environment:
+      - NODE_ENV=production
+    # 如果需要访问宿主机网络（例如本地开发时连接其他服务）
+    # network_mode: host
+    # 如果应用监听端口，取消注释以下行
+    # ports:
+    #   - "3000:3000"
+    # 重启策略
+    restart: unless-stopped

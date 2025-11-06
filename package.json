@@ -1,0 +1,29 @@
+{
+  "name": "monitor-telegram-message",
+  "version": "1.0.0",
+  "description": "Telegram message monitoring and management application",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "start": "node realtime-monitor.js",
+    "delete-all-history": "node delete-all-history.js",
+    "list-groups": "node get-all-groups.js",
+    "docker:start": "node realtime-monitor.js",
+    "docker:generate-session": "node generate-session.js",
+    "docker:delete-all-history": "node delete-all-history.js",
+    "docker:list-groups": "node get-all-groups.js",
+    "healthcheck": "node healthcheck.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["telegram", "bot", "messaging"],
+  "author": "Hares",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "16.6.1",
+    "grammy": "1.38.3",
+    "telegram": "2.26.22"
+  }
+}

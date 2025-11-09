@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "backend/server.js",
+      "src": "api/**/*.js",
       "use": "@vercel/node"
     },
     {
@@ -13,15 +13,11 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "backend/server.js"
-    },
-    {
-      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|json))",
-      "dest": "frontend/dist/$1"
+      "dest": "/api/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "frontend/dist/index.html"
+      "dest": "/frontend/dist/index.html"
     }
   ]
 }
